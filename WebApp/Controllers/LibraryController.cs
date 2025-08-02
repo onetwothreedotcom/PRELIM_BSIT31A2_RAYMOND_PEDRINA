@@ -113,54 +113,55 @@ public class LibraryController : Controller
 
 
     private static List<User> users = new List<User>
+{
+    new User
     {
-        new User
+        Id = 1,
+        Username = "user1",
+        BorrowedBooks = new List<Borrow>
         {
-            Id = 1,
-            Username = "user1",
-            BorrowedBooks = new List<Borrow>
+            new Borrow
             {
-                new Borrow
-                {
-                    Book = books[0],
-                    DateBorrowed = new DateTime(2025, 2, 20),
-                    DateReturned = null
-                },
-                new Borrow
-                {
-                    Book = books[1],
-                    DateBorrowed = new DateTime(2025, 2, 20),
-                    DateReturned = null
-                }
-            }
-        },
-        new User
-        {
-            Id = 2,
-            Username = "user2",
-            BorrowedBooks = new List<Borrow>
+                Book = books[0],
+                DateBorrowed = new DateTime(2025, 2, 20),
+                DateReturned = null
+            },
+            new Borrow
             {
-                new Borrow
-                {
-                    Book = books[2], 
-                    DateBorrowed = new DateTime(2025, 2, 20),
-                    DateReturned = null
-                },
-                new Borrow
-                {
-                    Book = books[3], 
-                    DateBorrowed = new DateTime(2025, 2, 20),
-                    DateReturned = null
-                },
-                new Borrow
-                {
-                    Book = books[4], // Brave New World
-                    DateBorrowed = new DateTime(2025, 2, 20),
-                    DateReturned = null
-                }
+                Book = books[1],
+                DateBorrowed = new DateTime(2025, 2, 20),
+                DateReturned = null
             }
         }
-};
+    },
+    new User
+    {
+        Id = 2,
+        Username = "user2",
+        BorrowedBooks = new List<Borrow>
+        {
+            new Borrow
+            {
+                Book = books[2],
+                DateBorrowed = new DateTime(2025, 2, 20),
+                DateReturned = null
+            },
+            new Borrow
+            {
+                Book = books[3],
+                DateBorrowed = new DateTime(2025, 2, 20),
+                DateReturned = null
+            },
+            new Borrow
+            {
+                Book = books[4], // Brave New World
+                DateBorrowed = new DateTime(2025, 2, 20),
+                DateReturned = null
+            }
+        }
+    }
+};  // <-- add this semicolon here!
+
 
     public IActionResult Index()
     {
