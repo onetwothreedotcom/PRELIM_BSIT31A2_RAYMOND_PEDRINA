@@ -28,7 +28,7 @@ public class LibraryController : Controller
         IsAvailable = false,
         DatePublished = new DateTime(1949, 6, 8)  // NEW
     },
-    // ... add DatePublished for all other books as well:
+ 
     new Book
     {
         Id = 3,
@@ -112,7 +112,7 @@ public class LibraryController : Controller
     };
 
 
-    private static List<User> users = new List<User>
+    public static List<User> users = new List<User>
 {
     new User
     {
@@ -160,7 +160,7 @@ public class LibraryController : Controller
             }
         }
     }
-};  // <-- add this semicolon here!
+}; 
 
 
     public IActionResult Index()
